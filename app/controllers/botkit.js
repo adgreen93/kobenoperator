@@ -24,6 +24,7 @@ require('./conversations')(controller)
 // this function processes the POST request to the webhook
 var handler = function (obj) {
   controller.debug('Message received from FB')
+  console.log(obj)
   var message
   if (obj.entry) {
     for (var e = 0; e < obj.entry.length; e++) {

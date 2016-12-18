@@ -1,5 +1,6 @@
 /* eslint-disable brace-style */
 /* eslint-disable camelcase */
+request = require('request');
 var facebook_handler = require('../controllers/botkit').handler
 
 module.exports = function (app) {
@@ -12,18 +13,23 @@ module.exports = function (app) {
   app.get('/webhook', function (req, res) {
     // This enables subscription to the webhooks
     if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === process.env.FACEBOOK_VERIFY_TOKEN) {
-      res.send(req.query['hub.challenge'])
+        console.log("Validating webhook");
+        res.status(200).send(req.query['hub.challenge']);
+
     }
     else {
-      res.send('Incorrect verify token')
+      res.send('Incorrect verify token');
+      console.error("Failed validation. Make sure the validation tokens match.");
     }
   })
 
   app.post('/webhook', function (req, res) {
+
+
     facebook_handler(req.body)
 
     res.send('ok')
-  })
+
+  });
+
 }
-/* eslint-disable brace-style */
-/* eslint-disable camelcase */

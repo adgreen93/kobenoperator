@@ -3,8 +3,9 @@
 // CONFIG===============================================
 /* Uses the slack button feature to offer a real time bot to multiple teams */
 var Botkit = require('botkit')
-var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/botkit-demo'
+var mongoUri = process.env.MONGODB_URI || 'mongodb://alex:fun22sun@ds139288.mlab.com:39288/botoperator'
 var db = require('../../config/db')({mongoUri: mongoUri})
+var Request = require('request');
 
 var controller = Botkit.facebookbot({
   debug: true,
@@ -32,6 +33,8 @@ var handler = function (obj) {
         var facebook_message = obj.entry[e].messaging[m]
 
         console.log(facebook_message)
+
+
 
         // normal message
         if (facebook_message.message) {
@@ -63,7 +66,24 @@ var handler = function (obj) {
             // save if user comes from "Send to Messenger"
           create_user_if_new(facebook_message.sender.id, facebook_message.timestamp)
 
+          userSearch(controller, facebook_message)
+
           controller.trigger('facebook_optin', [bot, message])
+        }
+
+        else if (facebook_message.request) {
+
+          message = {
+            request:facebook_message.message.text,
+            user: facebook_message.sender.id,
+            channel: facebook_message.sender.id,
+            timestamp: facebook_message.timestamp
+          }
+
+            // save if user comes from "Send to Messenger"
+          create_user_if_new(facebook_message.sender.id, facebook_message.timestamp)
+
+          controller.trigger('request', [bot, message])
         }
         // clicks on a postback action in an attachment
         else if (facebook_message.postback) {
@@ -117,6 +137,26 @@ var create_user_if_new = function (id, ts) {
     }
   })
 }
+
+//we'll use this to get users info when we first get our hands on them.
+
+var userSearch = function (controller, facebook_message) {
+
+  Request.get('https://graph.facebook.com/v2.6/' + facebook_message.sender.id + '?access_token=' + process.env.FACEBOOK_PAGE_TOKEN,
+    function (err, res, body) {
+      if (err) {
+        console.log('******failure******');
+      }
+      else {
+
+        console.log('******here we go heres the user details*****'+ body);
+        return
+
+      }
+  });
+
+}
+
 
 exports.handler = handler
 /* eslint-disable brace-style */

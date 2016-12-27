@@ -1,6 +1,6 @@
 /* eslint-disable brace-style */
 /* eslint-disable camelcase */
-var db = require('monkii')
+var db = require('monkii');
 /**
  * botkit-storage-mongo - MongoDB driver for Botkit
  *
@@ -15,6 +15,7 @@ module.exports = function (config) {
   var Teams = db(config.mongoUri).get('teams')
   var Users = db(config.mongoUri).get('users')
   var Channels = db(config.mongoUri).get('channels')
+
 
   var unwrapFromList = function (cb) {
     return function (err, data) {

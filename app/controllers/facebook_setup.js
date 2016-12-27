@@ -16,7 +16,8 @@ module.exports = function (controller) {
         // start ticking to send conversation messages
         controller.startTicking()
       }
-    })
+  })
+
 
   var url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token=' + process.env.FACEBOOK_PAGE_TOKEN
 
@@ -47,8 +48,8 @@ module.exports = function (controller) {
     'call_to_actions': [
       {
         'type': 'postback',
-        'title': 'Item 1',
-        'payload': 'Item 1'
+        'title': 'Start Over',
+        'payload': 'welcome'
       },
       {
         'type': 'postback',
@@ -73,6 +74,12 @@ module.exports = function (controller) {
     'greeting': {
       'text': 'Your greetings message'
     }
+  }
+
+  var form4 = {
+    "setting_type" : "domain_whitelisting",
+    "whitelisted_domains" : ["https://www.google.com"],
+    "domain_action_type": "add"
   }
 
   Request.post(url, {form: form3}, function (err, response, body) {

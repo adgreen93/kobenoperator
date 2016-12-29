@@ -5,7 +5,7 @@ var Stage = require('../models/stages.js');
 module.exports = function (controller) {
   // this is triggered when a user clicks the send-to-messenger plugin
   controller.on('facebook_optin', function (bot, message) {
-    bot.reply(message, "Hey you. I'm a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC. Type in a 'hood or a price and we can get this thing started.")
+    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC. Type in a 'hood or a price and we can get this thing started.")
   });
 
   // user said hello
@@ -36,7 +36,7 @@ module.exports = function (controller) {
              "elements":[
                 {
                  "title":stage.title,
-                 "image_url":"https://petersfancybrownhats.com/company_image.png",
+                 "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
                  "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
                  "buttons":[
                    {
@@ -71,7 +71,7 @@ module.exports = function (controller) {
             "elements":[
                {
                 "title":stage.title,
-                "image_url":"https://petersfancybrownhats.com/company_image.png",
+                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
                 "buttons":[
                   {
@@ -106,7 +106,7 @@ module.exports = function (controller) {
             "elements":[
                {
                 "title":stage.title,
-                "image_url":"https://petersfancybrownhats.com/company_image.png",
+                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
                 "buttons":[
                   {
@@ -141,7 +141,7 @@ module.exports = function (controller) {
             "elements":[
                {
                 "title":stage.title,
-                "image_url":"https://petersfancybrownhats.com/company_image.png",
+                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
                 "buttons":[
                   {
@@ -180,7 +180,7 @@ module.exports = function (controller) {
           "elements":[
              {
               "title": "Hi! I'm Alexander Green.",
-              "image_url":"https://petersfancybrownhats.com/company_image.png",
+              "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
               "subtitle":"I made this bot. I'm an engineer, designer, and writer based in NYC.",
               "buttons":[
                 {

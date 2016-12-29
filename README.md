@@ -1,4 +1,6 @@
-# Vibe - A Messenger Bot Built using Express and Mongo (with Botkit)
+# Patron - A Messenger Bot For Bar Reccomendations in NYC.
+
+Built using Express and Mongo (with Botkit)
 
 This app was built using [Botkit](https://github.com/howdyai/botkit).
 
@@ -10,6 +12,13 @@ This app was built using [Botkit](https://github.com/howdyai/botkit).
 * Serves webpages through standard express routes
 ```
 app/routes/routes.js
+
+```
+
+* Add new bars to the database.
+
+```
+app/views/maker.js
 
 ```
 

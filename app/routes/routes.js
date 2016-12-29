@@ -8,14 +8,21 @@ var client = require('twilio')('AC130c4d0a94aba1934a47715ad45dd058', '7a3bb073ac
 
 var facebook_handler = require('../controllers/botkit').handler
 
-
 module.exports = function (app) {
   // public pages=============================================
   // root
   app.get('/', function (req, res) {
     Stage.find(function(err, stages) {
           res.render('home', { stages: stages});
-          console.log(stages);
+
+     });
+
+  });
+
+  app.get('/maker', function (req, res) {
+    Stage.find(function(err, stages) {
+          res.render('maker', { stages: stages});
+
      });
 
   });
@@ -43,6 +50,7 @@ module.exports = function (app) {
             image_url : req.body.url,
             type: req.body.type,
             price: req.body.price,
+            address: req.body.address,
             borough: req.body.borough,
             subtitle : req.body.subtitle
         }, function(err, stage) {

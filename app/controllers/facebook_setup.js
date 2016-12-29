@@ -48,13 +48,23 @@ module.exports = function (controller) {
     'call_to_actions': [
       {
         'type': 'postback',
-        'title': 'Start Over',
-        'payload': 'welcome'
+        'title': '🛎 Start Over',
+        'payload': 'start over'
       },
       {
         'type': 'postback',
-        'title': 'Item 2',
-        'payload': 'Item 2'
+        'title': '🍻 Bar of the Day',
+        'payload': 'bar of the day'
+      },
+      {
+        'type': 'postback',
+        'title': '🏅 The Top Five',
+        'payload': 'top five'
+      },
+      {
+        'type': 'postback',
+        'title': '❤️ Who Made This?',
+        'payload': 'the creator'
       }
     ]
   }

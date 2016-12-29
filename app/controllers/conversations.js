@@ -5,7 +5,7 @@ var Stage = require('../models/stages.js');
 module.exports = function (controller) {
   // this is triggered when a user clicks the send-to-messenger plugin
   controller.on('facebook_optin', function (bot, message) {
-    bot.reply(message, "Hey you. I'm a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC. Type in a 'hood and we can get this thing started.")
+    bot.reply(message, "Hey you. I'm a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC. Type in a 'hood or a price and we can get this thing started.")
   });
 
   // user said hello
@@ -74,8 +74,6 @@ module.exports = function (controller) {
      else {
        calculated_price = 1
      }
-
-     console.log(calculated_price)
 
      Stage.findOne({ price: calculated_price }, function(err, stage) {
 

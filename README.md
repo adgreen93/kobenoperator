@@ -1,19 +1,19 @@
-# Botkit demo for Messenger, using Express and Mongo
+# Vibe - A Messenger Bot Built using Express and Mongo (with Botkit)
 
-This app is a demo of using [Botkit](https://github.com/howdyai/botkit) to create a Facebook Messenger bot, using the MongoDB [adapter](https://github.com/howdyai/botkit-storage-mongo) for storage and [Express](http://expressjs.com) to serve webpages.
+This app was built using [Botkit](https://github.com/howdyai/botkit).
 
-The same demo for Slack bots can be found [here](https://github.com/mvaragnat/botkit-express-demo)
+* Release date will be January 2017 - I may use actual bars or just use dummy data - but either way it'll be hosted on Heroku, and available to the general public to experiment with.
+
 
 ## Features
 
 * Serves webpages through standard express routes
-``` app/routes/routes.js ```
+```
+app/routes/routes.js
 
-* Uses Monkii as MongoDB driver
+```
 
 * Stores users ID when a new user clicks on "Send to Messenger"
-
-* Offers a welcome message when user clicks on "Send to Messenger", replies to Hello, and generally just repeats what you just said
 
 ## Configuration
 
@@ -42,17 +42,11 @@ lt --subdomain yourappname --port 5000
 
 * For Heroku deployment
 
-Add Page ID, App ID, and token as environement variables.
+Add Page ID, App ID, and token as environment variables.
 Change the webhook route to match your deployed domain name.
 
 You can use MongoLab add-on to add Mongo storage, they have a free tier.
 
-## Contributions & style
-Contributions are more than welcome!
-In terms of style, I use [standard style](https://github.com/feross/standard) with camelcase and brace-style disabled.
-
-## Author
-[Matthieu Varagnat](https://twitter.com/MVaragnat)
 
 ## Licence
 Shared under [MIT licence](http://choosealicense.com/licenses/mit/)

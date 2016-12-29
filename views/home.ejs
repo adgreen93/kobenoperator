@@ -2,7 +2,7 @@
 <html dir="ltr" lang="en-US">
 <% include ./partials/head %>
 
-<body>
+<body style="background-color:#3A539B;">
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -21,16 +21,17 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="container-fluid" style="text-align:center;">
-  <div class="header" style="background-color:#3A539B;">
+  <div class="container-fluid" style="text-align:center;color:white;">
+  <div class="header">
     <div class="row">
-
-      <div class="col-md-4 col-md-offset-4">
-        <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png" class="img-responsive"></img>
+<div style="height:50px;"></div>
+      <div class="col-sm-4 col-sm-offset-4">
+        <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-short-header.png" class="img-responsive"></img>
 
       </div>
     </div>
-      <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
 
       <h2>A Bar Reccomendation Bot</h2>
       <p> Serving up great spots with mellow beats for friends and lovers. </p>
@@ -41,10 +42,14 @@
         data-ref="PASS_THROUGH_PARAM"
         color="blue"
         size="large"></div>
+
+
       </div>
+</div>
 
 
     </div>
+<div style="height:200px;"></div>
   </div>
 
 </body>

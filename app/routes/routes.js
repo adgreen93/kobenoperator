@@ -47,12 +47,12 @@ module.exports = function (app) {
 
     Stage.create({
             title  : req.body.title,
-            image_url : req.body.url,
+            image_url : req.body.image_url,
+            direction_url : req.body.image_url,
             type: req.body.type,
             price: req.body.price,
             address: req.body.address,
-            borough: req.body.borough,
-            subtitle : req.body.subtitle
+            borough: req.body.borough
         }, function(err, stage) {
             if (err)
                 res.sendStatus(err);

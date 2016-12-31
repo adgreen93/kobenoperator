@@ -9,7 +9,7 @@ module.exports = function (controller) {
 
   });
 
-  // user said hello
+  // user searches by price
   controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
 
     Stage.findOne({ price: message.text }, function(err, stage) {
@@ -69,7 +69,7 @@ module.exports = function (controller) {
                 {
                  "title":stage.title,
                  "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
-                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                  "buttons":[
                    {
                      "type":"web_url",
@@ -104,7 +104,7 @@ module.exports = function (controller) {
                {
                 "title":stage.title,
                 "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
-                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                 "buttons":[
                   {
                     "type":"web_url",
@@ -139,7 +139,7 @@ module.exports = function (controller) {
                {
                 "title":stage.title,
                 "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
-                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                 "buttons":[
                   {
                     "type":"web_url",
@@ -174,7 +174,7 @@ module.exports = function (controller) {
                {
                 "title":stage.title,
                 "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
-                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                 "buttons":[
                   {
                     "type":"web_url",
@@ -218,7 +218,7 @@ module.exports = function (controller) {
                 {
                   "type":"web_url",
                   "url":"https://petersfancybrownhats.com/company_image.png",
-                  "title":"Peep the Portfolio"
+                  "title":"Check the Portfolio"
                 }
               ]
             }

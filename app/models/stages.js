@@ -9,9 +9,9 @@ var stageSchema = mongoose.Schema({
     image_url : String,
     borough: String,
     address: String,
+    direction_url: String,
     price: { type: Number, min: 1, max: 5 },
-    type: String,
-    subtitle : String
+    type: String
 
 });
 

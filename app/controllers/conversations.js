@@ -5,7 +5,8 @@ var Stage = require('../models/stages.js');
 module.exports = function (controller) {
   // this is triggered when a user clicks the send-to-messenger plugin
   controller.on('facebook_optin', function (bot, message) {
-    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC. Type in a 'hood or a price and we can get this thing started.")
+    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC.");
+    bot.reply(message, "Type in a 'hood or a price and we can get this thing started.")
   });
 
   // user said hello
@@ -82,7 +83,7 @@ module.exports = function (controller) {
                   {
                   'type':'postback',
                   'title':'Another Bar',
-                  'payload':'another one'
+                  'payload': message.text
                   }
                 ]
               }
@@ -117,7 +118,7 @@ module.exports = function (controller) {
                   {
                   'type':'postback',
                   'title':'Another Bar',
-                  'payload':'another one'
+                  'payload':'brooklyn'
                   }
                 ]
               }
@@ -196,7 +197,6 @@ module.exports = function (controller) {
       bot.reply(message, {
           attachment: attachment,
       });
-      bot.reply(message, 'Knock knock. Who is there? The futility of everything you do.');
 
     }
 

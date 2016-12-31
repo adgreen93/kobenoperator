@@ -199,6 +199,79 @@ module.exports = function (controller) {
 
     }
 
+    else if (message.payload == 'top three'){
+
+      var attachment = {
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+             {
+               Stage.findOne({ borough: 'li' }, function(err, stage) {
+                  "title":stage.title,
+                  "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                  "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                  "buttons":[
+                    {
+                      "type":"web_url",
+                      "url":"stage.url",
+                      "title":"Directions to Bar"
+                    },
+                    {
+                    'type':'postback',
+                    'title':'Another Bar',
+                    'payload':'another one'
+                    }
+                  ]
+              });
+            },
+            {
+              Stage.findOne({ borough: 'li' }, function(err, stage) {
+                 "title":stage.title,
+                 "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                 "buttons":[
+                   {
+                     "type":"web_url",
+                     "url":"stage.url",
+                     "title":"Directions to Bar"
+                   },
+                   {
+                   'type':'postback',
+                   'title':'Another Bar',
+                   'payload':'another one'
+                   }
+                 ]
+             });
+           },
+           {
+             Stage.findOne({ borough: 'li' }, function(err, stage) {
+                "title":stage.title,
+                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "url":"stage.url",
+                    "title":"Directions to Bar"
+                  },
+                  {
+                  'type':'postback',
+                  'title':'Another Bar',
+                  'payload':'another one'
+                  }
+                ]
+            });
+          }
+          ]
+        }
+      }
+      bot.reply(message, {
+          attachment: attachment,
+      });
+
+    }
+
   });
 
 

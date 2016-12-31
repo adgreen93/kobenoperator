@@ -20,7 +20,7 @@ module.exports = function (controller) {
            "elements":[
               {
                "title":stage.title,
-               "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+               "image_url":stage.image_url,
                "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
                "buttons":[
                  {
@@ -68,7 +68,7 @@ module.exports = function (controller) {
              "elements":[
                 {
                  "title":stage.title,
-                 "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                 "image_url":stage.image_url,
                  "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                  "buttons":[
                    {
@@ -103,7 +103,7 @@ module.exports = function (controller) {
             "elements":[
                {
                 "title":stage.title,
-                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                "image_url":stage.image_url,
                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                 "buttons":[
                   {
@@ -138,12 +138,12 @@ module.exports = function (controller) {
             "elements":[
                {
                 "title":stage.title,
-                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                "image_url":stage.image_url,
                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                 "buttons":[
                   {
                     "type":"web_url",
-                    "url":"stage.url",
+                    "url": stage.direction_url,
                     "title":"Directions to Bar"
                   },
                   {
@@ -173,7 +173,7 @@ module.exports = function (controller) {
             "elements":[
                {
                 "title":stage.title,
-                "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+                "image_url":stage.image_url,
                 "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                 "buttons":[
                   {

@@ -58,8 +58,8 @@ module.exports = function (controller) {
       },
       {
         'type': 'postback',
-        'title': '🏅 The Top Five',
-        'payload': 'top five'
+        'title': '🏅 The Top Three',
+        'payload': 'top three'
       },
       {
         'type': 'postback',

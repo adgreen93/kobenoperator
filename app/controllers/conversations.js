@@ -10,8 +10,57 @@ module.exports = function (controller) {
   });
 
   // user said hello
-  controller.hears(['hello'], 'message_received', function (bot, message) {
-    bot.reply(message, 'You know, personally, I could never say this to anyone but you ' + message.user + 'but go eat an egg.');
+  controller.hears(['$', '$$', '$$$', '$$$$','$$$$$'], 'message_received', function (bot, message) {
+
+    if (message.text == '$') {
+        calculated_price = 1
+    }
+    else if (message.text == '$$') {
+      calculated_price = 2
+    }
+    else if (message.text == '$$$') {
+      calculated_price = 3
+    }
+    else if (message.text == '$$$$') {
+      calculated_price = 4
+    }
+    else if (message.text == '$$$$$') {
+      calculated_price = 5
+    }
+    else {
+      calculated_price = 1
+    }
+
+    Stage.findOne({ price: calculated_price }, function(err, stage) {
+       var attachment = {
+         "type":"template",
+         "payload":{
+           "template_type":"generic",
+           "elements":[
+              {
+               "title":stage.title,
+               "image_url":"https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-bot.png",
+               "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+               "buttons":[
+                 {
+                   "type":"web_url",
+                   "url":"stage.url",
+                   "title":"Directions to Bar"
+                 },
+                 {
+                 'type':'postback',
+                 'title':'Another Bar',
+                 'payload': stage.price
+                 }
+               ]
+             }
+           ]
+         }
+       }
+       bot.reply(message, {
+           attachment: attachment,
+       });
+   });
 
   });
 
@@ -20,7 +69,8 @@ module.exports = function (controller) {
   });
 
   controller.hears(['start over'], 'message_received', function (bot, message) {
-    bot.reply(message, "Hey you. I am a bot that does one beautiful thing: serve up good vibes by finding you bars in NYC. Type in a hood, price range, or a vibe and we can get this thing started. Or combine a few options and see what you get.")
+    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you good bars, coffee shops, and chill spots in NYC.");
+    bot.reply(message, "Type in a 'hood or a price and we can get this thing started.");
   });
 
   controller.hears(['tell me a joke'], 'message_received', function (bot, message) {
@@ -48,7 +98,7 @@ module.exports = function (controller) {
                    {
                    'type':'postback',
                    'title':'Another Bar',
-                   'payload':'another one'
+                   'payload': stage.type
                    }
                  ]
                }

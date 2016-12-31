@@ -48,7 +48,7 @@ module.exports = function (app) {
     Stage.create({
             title  : req.body.title,
             image_url : req.body.image_url,
-            direction_url : req.body.image_url,
+            direction_url : req.body.direction_url,
             type: req.body.type,
             price: req.body.price,
             address: req.body.address,

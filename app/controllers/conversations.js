@@ -10,28 +10,9 @@ module.exports = function (controller) {
   });
 
   // user said hello
-  controller.hears(['$', '$$', '$$$', '$$$$','$$$$$'], 'message_received', function (bot, message) {
+  controller.hears(['1', '2', '3', '4','5'], 'message_received', function (bot, message) {
 
-    if (message.text == '$') {
-        calculated_price = 1
-    }
-    else if (message.text == '$$') {
-      calculated_price = 2
-    }
-    else if (message.text == '$$$') {
-      calculated_price = 3
-    }
-    else if (message.text == '$$$$') {
-      calculated_price = 4
-    }
-    else if (message.text == '$$$$$') {
-      calculated_price = 5
-    }
-    else {
-      calculated_price = 1
-    }
-
-    Stage.findOne({ price: calculated_price }, function(err, stage) {
+    Stage.findOne({ price: message.text }, function(err, stage) {
        var attachment = {
          "type":"template",
          "payload":{

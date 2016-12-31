@@ -4,8 +4,7 @@
   "description": "Demo with Express and MongoDB",
   "main": "forever start server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "forever start server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",

@@ -10,7 +10,7 @@ module.exports = function (controller) {
   });
 
   // user said hello
-  controller.hears(['1', '2', '3', '4','5'], 'message_received', function (bot, message) {
+  controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
 
     Stage.findOne({ price: message.text }, function(err, stage) {
        var attachment = {

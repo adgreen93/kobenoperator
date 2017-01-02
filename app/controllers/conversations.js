@@ -11,9 +11,10 @@ module.exports = function (controller) {
 
   // user searches by price
   controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
-    random_number = Math.floor(Math.random() * 10) + 1;
-    console.log("********* RANDOM DUNMER" + random_number);
+
     Stage.find({ price: message.text }, function(err, stage) {
+      random_number = Math.floor(Math.random() * 10) + 1;
+      console.log("********* RANDOM DUNMER" + random_number);
        var attachment = {
          "type":"template",
          "payload":{

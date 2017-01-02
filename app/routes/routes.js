@@ -58,6 +58,7 @@ module.exports = function (app) {
                 res.sendStatus(err);
             else {
       return res.send('Success.');
+
     }
         });
   });

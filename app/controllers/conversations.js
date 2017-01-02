@@ -5,7 +5,7 @@ var Stage = require('../models/stages.js');
 module.exports = function (controller) {
   // this is triggered when a user clicks the send-to-messenger plugin
   controller.on('facebook_optin', function (bot, message) {
-    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you good bars in NYC." + "Type in a 'hood or a price and we can get this thing started.");
+    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you bars in NYC." + "Type in a borough name or a price (one to five, from cheap to expensive) and we'll get you drinking in no time.");
 
   });
 
@@ -21,7 +21,7 @@ module.exports = function (controller) {
               {
                "title":stage.title,
                "image_url":stage.image_url,
-               "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". " + stage.subtitle,
+               "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
                "buttons":[
                  {
                    "type":"web_url",
@@ -95,7 +95,8 @@ module.exports = function (controller) {
 
   controller.hears(['brooklyn', 'queens', 'manhattan'], 'message_received', function(bot, message){
 
-     Stage.findOne({ borough: message.text }, function(err, stage) {
+    var clean_borough = message.text.toLowerCase();
+     Stage.findOne({ borough: clean_borough }, function(err, stage) {
         var attachment = {
           "type":"template",
           "payload":{
@@ -130,7 +131,9 @@ module.exports = function (controller) {
 
   controller.hears(['bar of the day'], 'message_received', function(bot, message){
 
-     Stage.findOne({ borough: 'brooklyn' }, function(err, stage) {
+    var barday = ['brooklyn', 'queens', 'manhattan', 'club', 'chill', 'date spot', 'college', 'dive', 'dance', '1', '2', '3', '4', '5']
+    var random_search = barday[Math.floor(Math.random() * barday.length)];
+     Stage.findOne({ borough: random_search }, function(err, stage) {
         var attachment = {
           "type":"template",
           "payload":{

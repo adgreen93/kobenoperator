@@ -133,6 +133,7 @@ module.exports = function (controller) {
 
     var barday = ['brooklyn', 'queens', 'manhattan', 'club', 'chill', 'date spot', 'college', 'dive', 'dance', '1', '2', '3', '4', '5']
     var random_search = barday[Math.floor(Math.random() * barday.length)];
+    console.log("********RANDOM SEARCH RESULT******" + random_search)
      Stage.findOne({ borough: random_search }, function(err, stage) {
         var attachment = {
           "type":"template",

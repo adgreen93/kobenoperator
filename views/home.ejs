@@ -2,7 +2,7 @@
 <html dir="ltr" lang="en-US">
 <% include ./partials/head %>
 
-<body style="background-color:#3A539B;">
+<body style="">
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -21,7 +21,7 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="container-fluid" style="text-align:center;color:white;">
+  <div class="container-fluid" style="text-align:center;color:white; background-color:#3A539B;">
   <div class="header">
     <div class="row">
 <div style="height:50px;"></div>
@@ -45,6 +45,7 @@
         <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/iphone-patron.png" style="width:80%;"></img>
         <div style="height:50px;"></div>
         <h2> This one's on the house. </h2>
+        <br>
         <div class="fb-send-to-messenger"
           messenger_app_id="<%- process.env.FACEBOOK_APP_ID %>"
           page_id="<%- process.env.FACEBOOK_PAGE_ID %>"
@@ -59,5 +60,6 @@
     </div>
 <div style="height:150px;"></div>
   </div>
+
 
 </body>

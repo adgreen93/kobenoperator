@@ -5,14 +5,15 @@ var Stage = require('../models/stages.js');
 module.exports = function (controller) {
   // this is triggered when a user clicks the send-to-messenger plugin
   controller.on('facebook_optin', function (bot, message) {
-    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you bars in NYC." + "Type in a borough name or a price (one to five, from cheap to expensive) and we'll get you drinking in no time.");
+    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you bars in NYC." + "Type in a borough name or a price (one to five, meaning cheap to expensive) and we'll get you drinking in no time.");
 
   });
 
   // user searches by price
   controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
-
-    Stage.findOne({ price: message.text }, function(err, stage) {
+    random_number = Math.floor(Math.random() * 10) + 1;
+    console.log("********* RANDOM DUNMER" + random_number);
+    Stage.find({ price: message.text }, function(err, stage) {
        var attachment = {
          "type":"template",
          "payload":{
@@ -41,7 +42,7 @@ module.exports = function (controller) {
        bot.reply(message, {
            attachment: attachment,
        });
-   });
+   }).limit(1).skip(random_number);
 
   });
 
@@ -167,7 +168,7 @@ module.exports = function (controller) {
 
   });
 
-  controller.hears(['long island'], 'message_received', function(bot, message){
+  controller.hears(['long island', 'li'], 'message_received', function(bot, message){
 
      Stage.findOne({ borough: 'li' }, function(err, stage) {
         var attachment = {

@@ -50,8 +50,8 @@ var handler = function (obj) {
 
           // save if user comes from m.me adress or Facebook search
           create_user_if_new(facebook_message.sender.id, facebook_message.timestamp)
-
-          controller.receiveMessage(bot, message)
+          random_number = Math.floor(Math.random() * 10) + 1;
+          controller.receiveMessage(bot, message, random_number)
         }
         // When a user clicks on "Send to Messenger"
         else if (facebook_message.optin ||

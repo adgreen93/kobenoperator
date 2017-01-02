@@ -50,7 +50,7 @@ module.exports = function (controller) {
   });
 
   controller.hears(['start over'], 'message_received', function (bot, message) {
-    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you good bars in NYC." + "Type in a 'hood or a price and we can get this thing started.");
+    bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you bars in NYC." + "Type in a borough name or a price (one to five, from cheap to expensive) and we'll get you drinking in no time.");
 
   });
 
@@ -131,10 +131,10 @@ module.exports = function (controller) {
 
   controller.hears(['bar of the day'], 'message_received', function(bot, message){
 
-    var barday = ['brooklyn', 'queens', 'manhattan', 'club', 'chill', 'date spot', 'college', 'dive', 'dance', '1', '2', '3', '4', '5']
+    var barday = ['club', 'chill', 'date spot', 'college', 'dive', 'dance']
     var random_search = barday[Math.floor(Math.random() * barday.length)];
     console.log("********RANDOM SEARCH RESULT******" + random_search)
-     Stage.findOne({ borough: random_search }, function(err, stage) {
+     Stage.findOne({ type: random_search }, function(err, stage) {
         var attachment = {
           "type":"template",
           "payload":{

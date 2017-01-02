@@ -25,7 +25,7 @@ module.exports = function (controller) {
                "buttons":[
                  {
                    "type":"web_url",
-                   "url":"stage.url",
+                   "url":stage.direction_url,
                    "title":"Directions to Bar"
                  },
                  {

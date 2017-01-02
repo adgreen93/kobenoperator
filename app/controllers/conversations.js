@@ -58,7 +58,7 @@ module.exports = function (controller) {
     bot.reply(message, 'Knock knock. Who is there? The futility of everything you do.');
   });
 
-  controller.hears(['club', 'chill', 'date spot', 'college', 'dive', 'dance'], 'message_received', function (bot, message) {
+  controller.hears(['club', 'chill', 'date spot', 'college', 'dive', 'dancing'], 'message_received', function (bot, message) {
 
       Stage.findOne({ type: message.text }, function(err, stage) {
          var attachment = {

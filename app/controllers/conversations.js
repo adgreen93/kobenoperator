@@ -12,8 +12,8 @@ module.exports = function (controller) {
   // user searches by price
   controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message, random_number) {
 
-    Stage.find({ price: message.text }, function(err, stage) {
-      
+    Stage.findOne({ price: message.text }, function(err, stage) {
+
       console.log("********* RANDOM DUNMER" + random_number);
        var attachment = {
          "type":"template",
@@ -43,7 +43,7 @@ module.exports = function (controller) {
        bot.reply(message, {
            attachment: attachment,
        });
-   }).limit(1).skip(random_number);
+   });
 
   });
 

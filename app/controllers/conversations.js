@@ -13,10 +13,42 @@ module.exports = function (controller) {
   controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
 
     //db.stages.aggregate([     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
-
+    var cursor3 = Stage.aggregate({ $match: { "borough":"brooklyn"}});
     var cursor2 = Stage.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
     console.log("ANOTHER WAY????" + cursor2);
     console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor2));
+    console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor3));
+
+    Stage.findOne({ price: message.text }, function(err, stage) {
+       var attachment = {
+         "type":"template",
+         "payload":{
+           "template_type":"generic",
+           "elements":[
+              {
+               "title":stage.title,
+               "image_url":stage.image_url,
+               "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
+               "buttons":[
+                 {
+                   "type":"web_url",
+                   "url": stage.direction_url,
+                   "title":"Directions to Bar"
+                 },
+                 {
+                 'type':'postback',
+                 'title':'Another Bar',
+                 'payload': stage.type
+                 }
+               ]
+             }
+           ]
+         }
+       }
+       bot.reply(message, {
+           attachment: attachment,
+       });
+   });
 
 
 

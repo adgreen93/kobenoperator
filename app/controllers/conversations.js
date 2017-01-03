@@ -17,7 +17,7 @@ module.exports = function (controller) {
 
 
 
-    db.stages.aggregate([     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
+    //db.stages.aggregate([     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
 
     var cursor2 = Model.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
     console.log("ANOTHER WAY????" + cursor2)

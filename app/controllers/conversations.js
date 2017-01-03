@@ -15,7 +15,8 @@ module.exports = function (controller) {
     //db.stages.aggregate([     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
 
     var cursor2 = Stage.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
-    console.log("ANOTHER WAY????" + cursor2.inspect);
+    console.log("ANOTHER WAY????" + cursor2);
+    console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor2));
 
 
 

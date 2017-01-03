@@ -10,49 +10,14 @@ module.exports = function (controller) {
   });
 
   // user searches by price
-  controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message, random_number) {
-
-
-
-
-
+  controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
 
     //db.stages.aggregate([     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
 
     var cursor2 = Stage.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
-    console.log("ANOTHER WAY????" + cursor2)
+    console.log("ANOTHER WAY????" + cursor2.inspect);
 
-      Stage.findOne({ price: message.text }, function(err, stage) {
-      console.log("********* RANDOM DUNMER" + random_number);
-       var attachment = {
-         "type":"template",
-         "payload":{
-           "template_type":"generic",
-           "elements":[
-              {
-               "title":stage.title,
-               "image_url":stage.image_url,
-               "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
-               "buttons":[
-                 {
-                   "type":"web_url",
-                   "url":stage.direction_url,
-                   "title":"Directions to Bar"
-                 },
-                 {
-                 'type':'postback',
-                 'title':'Another Bar',
-                 'payload': stage.price
-                 }
-               ]
-             }
-           ]
-         }
-       }
-      });
-       bot.reply(message, {
-           attachment: attachment,
-       });
+
 
 
   });

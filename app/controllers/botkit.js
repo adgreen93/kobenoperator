@@ -32,8 +32,6 @@ var handler = function (obj) {
       for (var m = 0; m < obj.entry[e].messaging.length; m++) {
         var facebook_message = obj.entry[e].messaging[m]
 
-
-
         // normal message
         if (facebook_message.message) {
           message = {
@@ -48,7 +46,7 @@ var handler = function (obj) {
 
           // save if user comes from m.me adress or Facebook search
           create_user_if_new(facebook_message.sender.id, facebook_message.timestamp)
-        
+
           controller.receiveMessage(bot, message)
         }
         // When a user clicks on "Send to Messenger"

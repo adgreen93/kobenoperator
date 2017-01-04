@@ -38,10 +38,10 @@ module.exports = function (controller) {
            ]
          }
        }
-       bot.reply(message, {
-           attachment: attachment,
-       });
-   });
+         bot.reply(message, {
+             attachment: attachment,
+         });
+     });
 
   });
 
@@ -240,7 +240,7 @@ module.exports = function (controller) {
   // user says anything else
   controller.hears('(.*)', 'message_received', function (bot, message) {
 
-    var response_messages = [". We can't help you there, so sorry about that. Let's move on.", ". See a doctor about that.", ". Not sure how to process that."]
+    var response_messages = [". We can't help you there.", ". Let's move on.", ". See a doctor about that.", ". Not sure how to feel about that."]
     var item = response_messages[Math.floor(Math.random()*response_messages.length)];
     bot.reply(message, 'You said ' + message.match[1] + item)
   });

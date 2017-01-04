@@ -12,13 +12,6 @@ module.exports = function (controller) {
   // user searches by price
   controller.hears(['1', '2', '3', '4', '5'], 'message_received', function (bot, message) {
 
-    //db.stages.aggregate([     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
-    var cursor3 = Stage.aggregate({ $match: { "borough":"brooklyn"}});
-    var cursor2 = Stage.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]);
-    console.log("ANOTHER WAY????" + cursor2);
-    console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor2));
-    console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor3));
-    console.log(Stage.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]));
     Stage.findOne({ price: message.text }, function(err, stage) {
        var attachment = {
          "type":"template",
@@ -49,9 +42,6 @@ module.exports = function (controller) {
            attachment: attachment,
        });
    });
-
-
-
 
   });
 
@@ -247,9 +237,11 @@ module.exports = function (controller) {
 
   });
 
-
   // user says anything else
   controller.hears('(.*)', 'message_received', function (bot, message) {
-    bot.reply(message, 'you said ' + message.match[1])
+
+    var response_messages = [". We can't help you there, so sorry about that. Let's move on.", ". See a doctor about that.", ". Not sure how to process that."]
+    var item = response_messages[Math.floor(Math.random()*response_messages.length)];
+    bot.reply(message, 'You said ' + message.match[1] + item)
   });
 }

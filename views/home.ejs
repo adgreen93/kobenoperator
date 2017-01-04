@@ -21,45 +21,119 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="container-fluid" style="text-align:center;color:white; background-color:#3A539B;">
-  <div class="header">
-    <div class="row">
-<div style="height:50px;"></div>
-      <div class="col-sm-4 col-sm-offset-4">
-        <a href="/">  <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-short-header.png" class="img-responsive"></img></a>
+<div class="container-fluid" style="text-align:center;color:white; background-color:#3A539B;">
+    <div class="header">
+          <div class="row">
+              <div style="height:50px;"></div>
+              <div class="col-sm-4 col-sm-offset-4">
+                <a href="/">  <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-short-header.png" class="img-responsive"></img></a>
 
-      </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+
+              <h2 class="header-one">A Bar Reccomendation Bot</h2>
+              <p class="text"> Serving up great spots with mellow beats for friends and lovers. <br> Built by Alexander Green. </p>
+
+
+
+              </div>
+
+              <div class="col-sm-4 col-sm-offset-4">
+                <div style="height:50px;"></div>
+                <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/iphone-patron.png" style="width:80%;"></img>
+                <div style="height:50px;"></div>
+                <h2 class="header-one"> This one's on the house. </h2>
+                <hr style="width:50%;">
+                <p class="text"> Hit the link to try out Patron - no work necessary. </p>
+                <br>
+                <div class="fb-send-to-messenger"
+                  messenger_app_id="<%- process.env.FACEBOOK_APP_ID %>"
+                  page_id="<%- process.env.FACEBOOK_PAGE_ID %>"
+                  data-ref="PASS_THROUGH_PARAM"
+                  color="white"
+                  size="large" style="margin:auto;"></div>
+
+
+              </div>
+          </div>
+
+          <div class="row">
+            <div style="height:100px;"></div>
+            <div class="col-sm-3 col-sm-offset-3">
+              <div style="height:50px;"></div>
+              <h2 class="header-one"> Search by borough.</h2>
+                    <hr style="width:50%;">
+              <p class="text"> Well - if it's these. Search by borough, price range (from 1 to 5, cheap to expensive), or style.  </p>
+            </div>
+
+            <div class="col-sm-3">
+              <img class="img-responsive" src="https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-borough.gif"></img>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div style="height:150px;"></div>
+
+            <div class="col-sm-3 col-sm-offset-3">
+              <img class="img-responsive" src="https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-price.gif"></img>
+
+            </div>
+
+            <div class="col-sm-3">
+              <div style="height:50px;"></div>
+              <h2 class="header-one"> Search by price.</h2>
+                    <hr style="width:50%;">
+              <p class="text"> Try a price range (from 1 to 5, cheap to expensive). Cheers to all the dive bars out there. </p>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div style="height:150px;"></div>
+            <div class="col-sm-3 col-sm-offset-3">
+              <div style="height:50px;"></div>
+              <h2 class="header-one"> Search by type.</h2>
+              <hr style="width:50%;">
+              <p class="text"> Find what you're looking for. A College bar? Dive bar? Dancing? Or maybe a date spot a little off the beaten path.  </p>
+            </div>
+
+            <div class="col-sm-3">
+              <img class="img-responsive" src="https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-type.gif"></img>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div style="height:50px;"></div>
+            <div class="col-sm-6 col-sm-offset-3">
+              <div style="height:50px;"></div>
+              <h2 class="header-one"> Why'd you build this?</h2>
+              <hr style="width:50%;">
+              <p class="text">
+                Every month this year I want to challenge myself with a new project.
+                Nothing big, nothing sexy, but small interesting tech projects that I can market as actual products.
+                I love the entire process - engineering, design, and copy, so by putting a little flair in my projects I get to itch that creative bone.
+                This one's a Facebook Messenger bot. Next up is an Alexa Skill.
+                <br>
+                <br>
+                Here's what I'd like to add - entering multiple parameters for search, more refined search by neighborhood in the city, a streamlined way to upload new bars, and maybe a few other tweaks along the way.
+                <br>
+                  <div class="fb-like" data-href="https://www.facebook.com/Patron-NYC-362819280749662/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+              </p>
+            </div>
+
+
+
+          </div>
     </div>
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-
-      <h2>A Bar Reccomendation Bot</h2>
-      <p> Serving up great spots with mellow beats for friends and lovers. <br>Built by Alexander Green. </p>
-
-
-
-      </div>
-
-      <div class="col-sm-4 col-sm-offset-4">
-        <div style="height:50px;"></div>
-        <img src="https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/iphone-patron.png" style="width:80%;"></img>
-        <div style="height:50px;"></div>
-        <h2> This one's on the house. </h2>
-        <br>
-        <div class="fb-send-to-messenger"
-          messenger_app_id="<%- process.env.FACEBOOK_APP_ID %>"
-          page_id="<%- process.env.FACEBOOK_PAGE_ID %>"
-          data-ref="PASS_THROUGH_PARAM"
-          color="white"
-          size="large" style="margin:auto;"></div>
-
-      </div>
+  <div style="height:150px;"></div>
 </div>
-
-
-    </div>
-<div style="height:150px;"></div>
-  </div>
 
 
 </body>

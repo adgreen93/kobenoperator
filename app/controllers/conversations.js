@@ -18,7 +18,7 @@ module.exports = function (controller) {
     console.log("ANOTHER WAY????" + cursor2);
     console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor2));
     console.log("ANOTHER WAY???? ANOTHER ONE" + JSON.stringify(cursor3));
-
+    console.log(Stage.aggregate( [     { $sample: {size: 1} },      { $match:{"borough":"brooklyn"} }    ]));
     Stage.findOne({ price: message.text }, function(err, stage) {
        var attachment = {
          "type":"template",

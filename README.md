@@ -1,12 +1,11 @@
-# Patron - A Messenger Bot For Bar Reccomendations in NYC.
+# Patron - A FB Messenger Bot For Bar Recommendations in NYC
 ![Alt Text](https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-short-header.png)
-Built using Express and Mongo (with Botkit)
+
 
 This app was built using [Botkit](https://github.com/howdyai/botkit).
-
+* Built using Express and MongoDB.
 * This will be hosted on Heroku, and available to the general public to experiment with.
-* It's connected to a database of forty bars. Mongoose is the DB driver.
-
+* Mongoose is the DB driver, hosted on mlab. Database is forty real bars across three boroughs and Long Island (Nassau County).
 
 ## Features
 
@@ -22,6 +21,7 @@ This app was built using [Botkit](https://github.com/howdyai/botkit).
 ## Configuration
 
 * Serves webpages through standard express routes
+
 ```
 app/routes/routes.js
 ```
@@ -29,11 +29,6 @@ app/routes/routes.js
 * Main page of the site.
 ```
 app/views/home.js
-```
-
-* Stripe code if you want to charge for user access.
-```
-public/js/stripe.js
 ```
 
 * Change the schema of bars(called stages in the code, because I'm insane).

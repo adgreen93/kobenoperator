@@ -9,12 +9,13 @@ This app was built using [Botkit](https://github.com/howdyai/botkit).
 
 ## Features
 
+* Search by borough
+
 ![Alt Text](https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-borough.gif)
 
+* Search by price range, from 1 to 5 (cheap to expensive).
 
 ![Alt Text](https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-price.gif)
-
-![Alt Text](https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-type.gif)
 
 * Serves webpages through standard express routes
 ```

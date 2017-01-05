@@ -4,7 +4,8 @@ Built using Express and Mongo (with Botkit)
 
 This app was built using [Botkit](https://github.com/howdyai/botkit).
 
-* Release date will be January 2017 - I may use actual bars or just use dummy data - but either way it'll be hosted on Heroku, and available to the general public to experiment with.
+* This will be hosted on Heroku, and available to the general public to experiment with.
+* It's connected to a database of forty bars. Mongoose is the DB driver.
 
 
 ## Features
@@ -17,22 +18,41 @@ This app was built using [Botkit](https://github.com/howdyai/botkit).
 
 ![Alt Text](https://s3.amazonaws.com/patron-bars/gifs/patron-bar-search-price.gif)
 
+
+## Configuration
+
 * Serves webpages through standard express routes
 ```
 app/routes/routes.js
+```
 
+* Main page of the site.
+```
+app/views/home.js
+```
+
+* Stripe code if you want to charge for user access.
+```
+public/js/stripe.js
+```
+
+* Change the schema of bars(called stages in the code, because I'm insane).
+
+```
+app/models/stages.js
 ```
 
 * Add new bars to the database.
 
 ```
 app/views/maker.js
-
 ```
 
 * Stores users ID when a new user clicks on "Send to Messenger"
 
-## Configuration
+## Setup
+
+As per original set up instructions.
 
 * For local deployment
 

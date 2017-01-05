@@ -1,5 +1,5 @@
 # Patron - A Messenger Bot For Bar Reccomendations in NYC.
-
+![Alt Text]https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-short-header.png)
 Built using Express and Mongo (with Botkit)
 
 This app was built using [Botkit](https://github.com/howdyai/botkit).

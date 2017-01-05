@@ -1,4 +1,4 @@
-# Patron - A FB Messenger Bot For Bar Recommendations in NYC
+# Patron - FB Messenger Bot For Bar Recommendations in NYC
 ![Alt Text](https://s3.amazonaws.com/aws-website-portfoliosite-bf6tr/patron-messenger-short-header.png)
 
 

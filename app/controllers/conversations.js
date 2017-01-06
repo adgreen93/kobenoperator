@@ -49,6 +49,11 @@ module.exports = function (controller) {
 
   });
 
+  controller.hears(['new jersey', 'jersey', 'NJ'], 'message_received', function (bot, message) {
+    bot.reply(message, "Heard you say something about New Jersey. Keep moving, riff raff.");
+
+  });
+
   controller.hears(['start over'], 'message_received', function (bot, message) {
     bot.reply(message, "Hey you. I'm Patron - a bot that does one beautiful thing: serve up good vibes by finding you bars in NYC." + "Type in a borough name or a price (one to five, from cheap to expensive) and we'll get you drinking in no time.");
 

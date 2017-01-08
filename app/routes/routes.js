@@ -3,8 +3,6 @@
 request = require('request');
 
 var Stage = require('../models/stages.js');
-var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-var client = require('twilio')('AC130c4d0a94aba1934a47715ad45dd058', '7a3bb073acfa9082809f85ea64798ff0');
 
 var facebook_handler = require('../controllers/botkit').handler
 
@@ -27,21 +25,6 @@ module.exports = function (app) {
 
   });
 
-  app.post('/text', function(req, res, next) {
-
-    console.log(req.body.name);
-    res.send('success');
-
-    client.sms.messages.post({
-      to:'+16464036251',
-      from:'+19177461368',
-      body:req.body.name
-    }, function(err, text) {
-      console.log('You sent: '+ text.body);
-      console.log('Current status of this text message is: '+ text.status);
-    });
-
-  });
 
   app.post('/stages', function(req, res){
 

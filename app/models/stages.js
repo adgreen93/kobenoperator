@@ -1,8 +1,12 @@
-// app/models/user.js
+// app/models/stages.js
 // load the things we need
 var mongoose = require('mongoose');
 
-// define the schema for our user model
+//title is name of bar
+//image is the image that comes with the search result
+//price can be from one to five, its represented as $$$$$
+
+// define the schema for our bar model
 var stageSchema = mongoose.Schema({
 
     title  : String,
@@ -15,10 +19,5 @@ var stageSchema = mongoose.Schema({
 
 });
 
-// create the model for users and expose it to our app
+// create the model for bars and expose it to our app
 module.exports = mongoose.model('Stage', stageSchema);
-
-
-//title is name of bar
-//image is the image that comes with the search result
-//price can be from one to five, its represented as $$$$$

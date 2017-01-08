@@ -13,7 +13,7 @@ var multer = require('multer');
 // either from .env files (development),
 // heroku environment in production, etc...
 dotenv.load()
-var mongoUri = process.env.MONGODB_URI || 'mongodb://alex:fun22sun@ds139288.mlab.com:39288/botoperator'
+var mongoUri = process.env.MONGODB_URI
 mongoose.connect(mongoUri);
 
 app.use(express.static(path.join(__dirname, '/public')))

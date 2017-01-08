@@ -6,6 +6,7 @@ This app was built using [Botkit](https://github.com/howdyai/botkit).
 * Built using Express and MongoDB.
 * This will be hosted on Heroku, and available to the general public to experiment with.
 * Mongoose is the DB driver, hosted on mlab. Database is forty real bars across three boroughs and Long Island (Nassau County).
+* Here's the story I wrote while developing this: https://mystudentvoices.com/on-building-a-fb-messenger-bot-thats-mildly-useful-it-recommends-bars-in-nyc-5459369794a4
 
 ## Features
 

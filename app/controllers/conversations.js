@@ -226,8 +226,8 @@ module.exports = function (controller) {
               "buttons":[
                 {
                   "type":"web_url",
-                  "url":"https://petersfancybrownhats.com/company_image.png",
-                  "title":"Check the Portfolio"
+                  "url":"http://aws-website-portfoliosite-bf6tr.s3-website-us-east-1.amazonaws.com/",
+                  "title":"Visit My Portfolio"
                 }
               ]
             }

@@ -139,7 +139,7 @@ module.exports = function (controller) {
     var barday = ['club', 'chill', 'date spot', 'college', 'dive', 'dance']
     var random_search = barday[Math.floor(Math.random() * barday.length)];
     console.log("********RANDOM SEARCH RESULT******" + random_search)
-     Stage.findOne({ type: random_search }, function(err, stage) {
+    Stage.findOne({ type: random_search }, function(err, stage) {
         var attachment = {
           "type":"template",
           "payload":{
@@ -211,6 +211,42 @@ module.exports = function (controller) {
 
     if (message.payload == 'another one') {
         bot.reply(message, 'Check this one out!')
+    }
+
+    else if (message.payload == 'bar of the day'){
+      var barday = ['club', 'chill', 'date spot', 'college', 'dive', 'dance']
+      var random_search = barday[Math.floor(Math.random() * barday.length)];
+      Stage.findOne({ type: random_search }, function(err, stage) {
+          var attachment = {
+            "type":"template",
+            "payload":{
+              "template_type":"generic",
+              "elements":[
+                 {
+                  "title":stage.title,
+                  "image_url":stage.image_url,
+                  "subtitle":"Price: " + stage.price + ", " + stage.address + ". " + stage.type + ". ",
+                  "buttons":[
+                    {
+                      "type":"web_url",
+                      "url": stage.direction_url,
+                      "title":"Directions to Bar"
+                    },
+                    {
+                    'type':'postback',
+                    'title':'Another Bar',
+                    'payload':'brooklyn'
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+          bot.reply(message, {
+              attachment: attachment,
+          });
+      });
+
     }
 
     else if (message.payload == 'the creator') {

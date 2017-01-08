@@ -214,7 +214,7 @@ module.exports = function (controller) {
     }
 
     else if (message.payload == 'bar of the day'){
-      var barday = ['club', 'chill', 'date spot', 'college', 'dive', 'dance']
+      var barday = ['chill', 'date spot', 'college bar', 'dive bar', 'dancing']
       var random_search = barday[Math.floor(Math.random() * barday.length)];
       Stage.findOne({ type: random_search }, function(err, stage) {
           var attachment = {

@@ -17,6 +17,13 @@ module.exports = function (app) {
 
   });
 
+  app.get('/api/stages', function (req, res) {
+    Stage.find(function(err, stages) {
+        res.json(stages);
+        console.log(stages);
+     });
+  });
+
   app.get('/maker', function (req, res) {
     Stage.find(function(err, stages) {
           res.render('maker', { stages: stages});
@@ -24,6 +31,10 @@ module.exports = function (app) {
      });
 
   });
+
+  app.get('/angular', function(req, res){
+      res.sendfile('./views/index.html');
+  })
 
 
   app.post('/stages', function(req, res){

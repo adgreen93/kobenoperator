@@ -20,7 +20,7 @@ module.exports = function (app) {
   app.get('/api/stages', function (req, res) {
     Stage.find(function(err, stages) {
         res.json(stages);
-        console.log(stages);
+        
      });
   });
 

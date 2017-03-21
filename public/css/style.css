@@ -1,7 +1,15 @@
-
+body {
+ background-color:white;
+}
 
 .text {
   font-family: 'Roboto', sans-serif;
+}
+
+.book {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 

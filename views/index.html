@@ -8,42 +8,63 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-    <title>Node/Angular Todo App</title>
+    <title>Patron - Find Bars In New York City</title>
 
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-    <style>
-        html                    { overflow-y:scroll; }
-        body                    { padding-top:50px; }
-        #todo-list              { margin-bottom:30px; }
-    </style>
+
 
     <!-- SPELLS -->
+      <script src="https://use.fontawesome.com/a6c7ebf22e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
     <script src="js/core.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:300" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body ng-controller="mainController">
     <div class="container">
+      <div style="height:30px;"></div>
+        <div class="row" style="text-transform:uppercase;">
+          <div class="col-sm-2 col-sm-offset-1"> <p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="#">About </a></p> </div>
+          <div class="col-sm-2"> <p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="#">Messenger </a></p> </div>
+          <div class="col-sm-2">
+      <a href="/">   <img src="https://s3.amazonaws.com/patron-bars/assets/patron-simple-logo.png" class="img-responsive" ></a>
 
-        <!-- HEADER AND TODO COUNT -->
-        <div class="jumbotron text-center">
-            <h1>Bar Lovers Only <br>
-							<h3>Current Bars:</h3> <span class="label label-info">{{ todos.length }}</span></h1>
-        </div>
+      </div>
+      <div class="col-sm-2 col-sm-offset-1"> <p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="http://www.alexandergreen.me">Alexander </a> </p></div>
+      <div class="col-sm-2"><p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="https://github.com/adgreen93/patron-nyc"> Github </a></p> </div>
+
+      </div>
+
+      <Br>
+      <div class="row" style="text-transform:uppercase;">
+
+
+      <div class="col-md-6 col-md-offset-3">
+<input style="width: 100%; text-align:center;" ng-model="mainController.query" placeholder="Search by borough, style, price, or feelings"/>
+      </div>
+<div class="col-md-3"> <p class="book">{{ todos.length }} Bars And Counting...</p></div>
+      </div>
+
+
+<hr>
+
 
         <!-- TODO LIST -->
         <div id="todo-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
+            <div class="col-sm-3" ng-repeat="todo in todos | filter:mainController.query">
 
                 <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox" ng-repeat="todo in todos">
-                    <label>
-                        <input type="checkbox"> {{todo.address}} {{todo.borough}}
-                    </label>
-                </div>
+                         <img src="{{todo.image_url}}" class="img-responsive" style="height:200px;">
+                         <hr>
+                         <p class="book">{{todo.title}}</p>
+
+                         <p class="book" style="font-size:12px;"><a href="{{todo.direction_url}}">{{todo.address}}</a></p>
+                         <p class="book" style="font-size:12px;">{{todo.borough}} | {{todo.type}} | {{todo.price}}</p>
 
             </div>
         </div>

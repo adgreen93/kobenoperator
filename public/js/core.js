@@ -8,7 +8,7 @@ function mainController($scope, $http) {
     $http.get('/api/stages')
         .success(function(data) {
             $scope.todos = data;
-            console.log(data);
+            
         })
         .error(function(data) {
             console.log('Error: ' + data);

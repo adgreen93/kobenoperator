@@ -56,7 +56,7 @@
 
         <!-- TODO LIST -->
         <div id="todo-list" class="row">
-            <div class="col-sm-3" ng-repeat="todo in todos | filter:mainController.query">
+            <div class="col-sm-3" ng-repeat="todo in todos | filter:mainController.query" style="text-align:center;">
 
                 <!-- LOOP OVER THE TODOS IN $scope.todos -->
                          <img src="{{todo.image_url}}" class="img-responsive" style="height:200px;">
@@ -65,13 +65,19 @@
 
                          <p class="book" style="font-size:12px;"><a href="{{todo.direction_url}}">{{todo.address}}</a></p>
                          <p class="book" style="font-size:12px;">{{todo.borough}} | {{todo.type}} | {{todo.price}}</p>
-
+                         <div style="height:10px;"></div>
             </div>
         </div>
 
-
+        <div style="height:100px;"></div>
 
     </div>
 
+    <footer class="footer">
+      <div class="container">
+        <div style="height:20px;"></div>
+        <p>Place sticky footer content here.</p>
+      </div>
+    </footer>
 </body>
 </html>

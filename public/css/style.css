@@ -1,5 +1,7 @@
 body {
  background-color:white;
+
+
 }
 
 .text {
@@ -15,4 +17,13 @@ body {
 
 .header-one {
   font-family: 'Montserrat', sans-serif;
+}
+
+.footer {
+
+    width: 100%;
+    height: 60px;
+        color: white;
+    background-color: #3345CC;
+
 }

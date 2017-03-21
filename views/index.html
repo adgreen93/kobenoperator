@@ -32,7 +32,7 @@
           <div class="col-sm-2 col-sm-offset-1"> <p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="#">About </a></p> </div>
           <div class="col-sm-2"> <p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="#">Messenger </a></p> </div>
           <div class="col-sm-2">
-      <a href="/">   <img src="https://s3.amazonaws.com/patron-bars/assets/patron-simple-logo.png" class="img-responsive" ></a>
+      <a href="/">   <img src="https://s3.amazonaws.com/patron-bars/assets/patron-simple-logo.png" class="img-responsive hvr-grow" ></a>
 
       </div>
       <div class="col-sm-2 col-sm-offset-1"> <p class="book" style=" padding-top:15px;"><a style="color:#3345CC;" href="http://www.alexandergreen.me">Alexander </a> </p></div>
@@ -59,12 +59,12 @@
             <div class="col-sm-3" ng-repeat="todo in todos | filter:mainController.query" style="text-align:center;">
 
                 <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                         <img src="{{todo.image_url}}" class="img-responsive" style="height:200px;">
-                         <hr>
+                         <img src="{{todo.image_url}}" class="img-responsive lightbox hvr-grow" style="height:200px;">
+                         <hr style="width:75%;">
                          <p class="book">{{todo.title}}</p>
 
-                         <p class="book" style="font-size:12px;"><a href="{{todo.direction_url}}">{{todo.address}}</a></p>
-                         <p class="book" style="font-size:12px;">{{todo.borough}} | {{todo.type}} | {{todo.price}}</p>
+                         <p class="book" style="font-size:11px;"><a href="{{todo.direction_url}}">{{todo.address}}</a></p>
+                         <p class="book" style="font-size:11px;">{{todo.borough}} | {{todo.type}} | {{todo.price}}</p>
                          <div style="height:10px;"></div>
             </div>
         </div>

@@ -8,7 +8,7 @@ function mainController($scope, $http) {
     $http.get('/api/stages')
         .success(function(data) {
             $scope.todos = data;
-            
+
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -16,4 +16,8 @@ function mainController($scope, $http) {
 
         // when submitting the add form, send the text to the node APC
 
+}
+
+function searchBox() {
+  console.log('blah');
 }

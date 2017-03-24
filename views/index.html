@@ -20,15 +20,29 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
     <script src="js/core.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:300" rel="stylesheet">
-
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body ng-controller="mainController">
+  <nav class="navbar navbar-default navbar-fixed-top visible-xs" style="background-color:white;  border-bottom: 5px solid #3345CC;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+
+            <span class="navbar-toggle-three"><p><a style="color:#3345CC; text-decoration:none; text-transform:uppercase;" href="/angular">The List</p></a></span>
+            <span class="navbar-toggle-three"><p><a style="color:#3345CC; text-decoration:none; text-transform:uppercase;" href="https://github.com/adgreen93/patron-nyc">Github</p></a></span>
+            <a class="navbar-brand" href="/"><img src="https://s3.amazonaws.com/patron-bars/assets/patron-simple-logo.png" class="img-responsive" style="width:100px;"></a>
+
+          </div>
+
+
+        </div><!--/.container-fluid -->
+      </nav>
     <div class="container">
-      <div style="height:30px;"></div>
-        <div class="row" style="text-transform:uppercase;">
+      <div style="height:40px;"></div>
+      <div style="height:50px;" class="visible-xs"></div>
+
+        <div class="row big-header hidden-xs" style="text-transform:uppercase;">
           <div class="col-sm-2 col-sm-offset-1"> <p class="book-header hvr-grow" style=" padding-top:15px; "><a style="color:#3345CC; text-decoration:none;" href="/angular">The List </a></p> </div>
           <div class="col-sm-2"> <p class="book-header hvr-grow" style=" padding-top:15px;"><a style="color:#3345CC; text-decoration:none;" href="https://www.facebook.com/Patron-NYC-362819280749662/">Messenger </a></p> </div>
           <div class="col-sm-2">
@@ -44,27 +58,67 @@
       <div class="row" style="text-transform:uppercase;">
 
 
-      <div class="col-md-6 col-md-offset-3">
-<input style="width: 100%; text-align:center;" ng-model="mainController.query" placeholder="Search by borough, style, price, or feelings"/>
+      <div class="col-sm-4 col-sm-offset-2">
+        <div class="select_style">
+        <div class="search">
+  <span class="fa fa-search"></span>
+  <input style="width: 100%; text-align:center;" ng-model="mainController.query" placeholder="Search by borough, style, price"/>
+</div>
+</div>
+  <div class="visible-xs" style="height:20px;"></div>
       </div>
-<div class="col-md-3"> <p class="book">{{ todos.length }} Bars And Counting...</p></div>
+
+      <div class="col-sm-2">
+              <div class="select_style">
+        <select ng-model="mainController.query">
+          <option value="" disabled selected>Borough</option>
+
+            <option value="">All</option>
+          <option value="brooklyn">Brooklyn</option>
+          <option value="queens">Queens</option>
+          <option value="manhattan">Manhattan</option>
+        </select>
+
+      </div>
+  <div class="visible-xs" style="height:20px;"></div>
       </div>
 
 
+      <div class="col-sm-2">
+
+        <div class="select_style">
+            <select ng-model="mainController.query">
+              <option value="" disabled selected>Bar Type</option>
+                <option value="">All</option>
+              <option value="dancing">Dancing</option>
+              <option value="date spot">Date Spot</option>
+              <option value="chill">Chill</option>
+                <option value="college bar">College Bar</option>
+            </select>
+        </div>
+
+   </div>
+
+
+
+
+      </div>
 <hr>
-
-
         <!-- TODO LIST -->
         <div id="todo-list" class="row">
             <div class="col-sm-3" ng-repeat="todo in todos | filter:mainController.query" style="text-align:center;">
 
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                         <img src="{{todo.image_url}}" class="img-responsive lightbox hvr-grow" style="height:200px;">
-                         <hr style="width:75%;">
+                <!-- LOOP OVER THE TODOS IN $scope.todos --><div class="box" style="height: 350px;">
+                      <a href="{{todo.direction_url}}">   <img src="{{todo.image_url}}" class="img-responsive lightbox hvr-grow" style="height:200px;"></a>
+
+
+                                <hr style="width:75%;">
                          <p class="book">{{todo.title}}</p>
                          <p class="book" style="font-size:11px;"><a href="{{todo.direction_url}}">{{todo.address}}</a></p>
                          <p class="book" style="font-size:11px;">{{todo.borough}} | {{todo.type}} | {{todo.price}}</p>
                          <div style="height:10px;"></div>
+
+                     </div>
             </div>
         </div>
 
@@ -73,10 +127,18 @@
     </div>
 
     <footer class="footer">
-      <div class="container">
-        <div style="height:20px;"></div>
-        <p>Place sticky footer content here.</p>
-      </div>
-    </footer>
+          <div class="container">
+
+              <div class="row">
+
+              <div class="col-xs-4 col-xs-offset-4">
+
+          </div>
+
+            </div>
+
+          </div>
+        </footer>
+
 </body>
 </html>

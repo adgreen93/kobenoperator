@@ -21,6 +21,18 @@ This app was built using [Botkit](https://github.com/howdyai/botkit).
 
 ## Configuration
 
+* Controllers for the Messenger bot. Conversations does most of the user interaction work - based on user input we enter that as a search param.
+
+```
+app/controllers/conversations.js
+```
+
+* Heavy lifting for the server, mostly courtesy of Botkit. My only addition is userSearch, which just spits back some more info about the user (name, location, etc) to save in our schema.
+
+```
+app/controllers/conversations.js
+```
+
 * Serves webpages through standard express routes
 
 ```
@@ -44,7 +56,19 @@ app/models/stages.js
 app/views/maker.js
 ```
 
-* Stores users ID when a new user clicks on "Send to Messenger"
+* Main index page of the site. Written in Angular. Gets a JSON response of all bars in the database and then filter using query.
+
+```
+app/views/index.html
+```
+
+* Angular code. It's just one HTTP request inside one controller.
+
+```
+app/public/core.js
+```
+
+
 
 ## Setup
 
